@@ -17,6 +17,7 @@ class InputPage extends StatefulWidget {
 class InputPageState extends State<InputPage> {
   Gender? selectedGender;
   double _currentHeight = 120.0;
+  double _currentWeight = 40.0;
 
   @override
   Widget build(BuildContext context) {
@@ -103,11 +104,49 @@ class InputPageState extends State<InputPage> {
               ),
             ),
           ),
-          const Expanded(
+          Expanded(
             child: Row(
               children: [
                 Expanded(
-                  child: ReusableCard(colour: activeCardColor),
+                  child: ReusableCard(
+                    colour: activeCardColor,
+                    cardChild: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text(
+                          'WEIGHT',
+                          style: labelTextStyle,
+                        ),
+                        Text(
+                          _currentWeight.toInt().toString(),
+                          style: numberTextStyle,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            FloatingActionButton(
+                              onPressed: () {
+                                setState(() {
+                                  _currentWeight--;
+                                });
+                              },
+                              backgroundColor: Color(0xFF2A2B46),
+                              child: Icon(Icons.remove),
+                            ),
+                            FloatingActionButton(
+                              onPressed: () {
+                                setState(() {
+                                  _currentWeight++;
+                                });
+                              },
+                              backgroundColor: Color(0xFF2A2B46),
+                              child: Icon(Icons.add),
+                            )
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
                 ),
                 Expanded(
                   child: ReusableCard(colour: activeCardColor),
@@ -126,3 +165,4 @@ class InputPageState extends State<InputPage> {
     );
   }
 }
+//Color(0xFF2A2B46)
