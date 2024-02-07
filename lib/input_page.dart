@@ -1,66 +1,127 @@
+import 'package:bmi_calculator/reusable_card.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+import 'constants.dart';
+import 'icon_content.dart';
+
+enum Gender { male, female }
 
 class InputPage extends StatefulWidget {
+  const InputPage({super.key});
+
   @override
-  _InputPageState createState() => _InputPageState();
+  InputPageState createState() => InputPageState();
 }
 
-class _InputPageState extends State<InputPage> {
+class InputPageState extends State<InputPage> {
+  Gender? selectedGender;
+  double _currentHeight = 120.0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('BMI CALCULATOR'),
+        title: const Text('BMI CALCULATOR'),
         centerTitle: true,
-        backgroundColor: Color(0xFF0F1126),
+        backgroundColor: const Color(0xFF0F1126),
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Expanded(
             child: Row(
               children: [
                 Expanded(
-                  child: ReusableCard(colour: Color(0xFF1D1E33)),
+                  child: ReusableCard(
+                    press: () {
+                      setState(() {
+                        selectedGender = Gender.male;
+                      });
+                    },
+                    colour: selectedGender == Gender.male
+                        ? activeCardColor
+                        : inActiveCardColor,
+                    cardChild: const IconContent(
+                      fontAwesomeIcon: FontAwesomeIcons.mars,
+                      labelText: 'MALE',
+                    ),
+                  ),
                 ),
                 Expanded(
-                  child: ReusableCard(colour: Color(0xFF1D1E33)),
+                  child: ReusableCard(
+                    press: () {
+                      setState(() {
+                        selectedGender = Gender.female;
+                      });
+                    },
+                    colour: selectedGender == Gender.female
+                        ? activeCardColor
+                        : inActiveCardColor,
+                    cardChild: const IconContent(
+                      fontAwesomeIcon: FontAwesomeIcons.venus,
+                      labelText: 'FEMALE',
+                    ),
+                  ),
                 )
               ],
             ),
           ),
           Expanded(
-            child: ReusableCard(colour: Color(0xFF1D1E33)),
+            child: ReusableCard(
+              colour: activeCardColor,
+              cardChild: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    'HEIGHT',
+                    style: labelTextStyle,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.baseline,
+                    textBaseline: TextBaseline.alphabetic,
+                    children: [
+                      Text(_currentHeight.toInt().toString(),
+                          style: numberTextStyle),
+                      const Text('cm', style: labelTextStyle),
+                    ],
+                  ),
+                  Slider(
+                    value: _currentHeight,
+                    min: 120.0,
+                    max: 220.0,
+                    divisions: 100,
+                    label: '${_currentHeight.floor()} cm',
+                    onChanged: (double value) {
+                      setState(() {
+                        _currentHeight = value;
+                      });
+                    },
+                  )
+                ],
+              ),
+            ),
           ),
-          Expanded(
+          const Expanded(
             child: Row(
               children: [
                 Expanded(
-                  child: ReusableCard(colour: Color(0xFF1D1E33)),
+                  child: ReusableCard(colour: activeCardColor),
                 ),
                 Expanded(
-                  child: ReusableCard(colour: Color(0xFF1D1E33)),
+                  child: ReusableCard(colour: activeCardColor),
                 )
               ],
             ),
           ),
+          Container(
+            margin: const EdgeInsets.only(top: 10),
+            height: bottomContainerHeight,
+            width: double.infinity,
+            color: bottomContainerColor,
+          )
         ],
-      ),
-    );
-  }
-}
-
-class ReusableCard extends StatelessWidget {
-  ReusableCard({super.key, required this.colour});
-
-  final Color colour;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.all(15),
-      decoration: BoxDecoration(
-        color: colour,
-        borderRadius: BorderRadius.circular(10),
       ),
     );
   }
