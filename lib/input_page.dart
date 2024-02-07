@@ -3,6 +3,7 @@ import 'package:bmi_calculator/round_icon_button.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import 'calculate_gesture_detector.dart';
 import 'constants.dart';
 import 'icon_content.dart';
 
@@ -19,7 +20,7 @@ class InputPageState extends State<InputPage> {
   Gender? selectedGender;
   double _currentHeight = 120.0;
   double _currentWeight = 40.0;
-  int _currentAge = 40;
+  int _currentAge = 10;
 
   @override
   Widget build(BuildContext context) {
@@ -141,8 +142,6 @@ class InputPageState extends State<InputPage> {
                                   _currentWeight++;
                                 });
                               },
-                              // backgroundColor: Color(0xFF2A2B46),
-                              // child: Icon(Icons.add),
                             )
                           ],
                         )
@@ -192,11 +191,11 @@ class InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          Container(
-            margin: const EdgeInsets.only(top: 10),
-            height: bottomContainerHeight,
-            width: double.infinity,
-            color: bottomContainerColor,
+          BottomButton(
+            onTap: () {
+              Navigator.pushNamed(context, '/second');
+            },
+            gestureText: 'CALCULATE',
           )
         ],
       ),

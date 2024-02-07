@@ -1,3 +1,4 @@
+import 'package:bmi_calculator/second_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'constants.dart';
@@ -11,6 +12,8 @@ class BMICalculator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      initialRoute: '/',
+      routes: {'/second': (context) => const ResultsPage()},
       theme: ThemeData.dark().copyWith(
         sliderTheme: SliderTheme.of(context).copyWith(
           activeTrackColor: Colors.white,
