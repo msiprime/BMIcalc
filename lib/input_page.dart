@@ -1,4 +1,5 @@
 import 'package:bmi_calculator/reusable_card.dart';
+import 'package:bmi_calculator/round_icon_button.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -18,6 +19,7 @@ class InputPageState extends State<InputPage> {
   Gender? selectedGender;
   double _currentHeight = 120.0;
   double _currentWeight = 40.0;
+  int _currentAge = 40;
 
   @override
   Widget build(BuildContext context) {
@@ -124,23 +126,23 @@ class InputPageState extends State<InputPage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            FloatingActionButton(
+                            RoundIconButton(
                               onPressed: () {
                                 setState(() {
                                   _currentWeight--;
                                 });
                               },
-                              backgroundColor: Color(0xFF2A2B46),
-                              child: Icon(Icons.remove),
+                              icon: FontAwesomeIcons.minus,
                             ),
-                            FloatingActionButton(
+                            RoundIconButton(
+                              icon: FontAwesomeIcons.plus,
                               onPressed: () {
                                 setState(() {
                                   _currentWeight++;
                                 });
                               },
-                              backgroundColor: Color(0xFF2A2B46),
-                              child: Icon(Icons.add),
+                              // backgroundColor: Color(0xFF2A2B46),
+                              // child: Icon(Icons.add),
                             )
                           ],
                         )
@@ -149,7 +151,43 @@ class InputPageState extends State<InputPage> {
                   ),
                 ),
                 Expanded(
-                  child: ReusableCard(colour: activeCardColor),
+                  child: ReusableCard(
+                    colour: activeCardColor,
+                    cardChild: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text(
+                          'AGE',
+                          style: labelTextStyle,
+                        ),
+                        Text(
+                          _currentAge.toString(),
+                          style: numberTextStyle,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            RoundIconButton(
+                              onPressed: () {
+                                setState(() {
+                                  _currentAge--;
+                                });
+                              },
+                              icon: FontAwesomeIcons.minus,
+                            ),
+                            RoundIconButton(
+                              icon: FontAwesomeIcons.plus,
+                              onPressed: () {
+                                setState(() {
+                                  _currentAge++;
+                                });
+                              },
+                            )
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
                 )
               ],
             ),
@@ -165,4 +203,3 @@ class InputPageState extends State<InputPage> {
     );
   }
 }
-//Color(0xFF2A2B46)
