@@ -1,11 +1,20 @@
+import 'package:bmi_calculator/components/reusable_card.dart';
 import 'package:bmi_calculator/constants.dart';
-import 'package:bmi_calculator/reusable_card.dart';
 import 'package:flutter/material.dart';
 
-import 'calculate_gesture_detector.dart';
+import '../components/calculate_gesture_detector.dart';
 
 class ResultsPage extends StatelessWidget {
-  const ResultsPage({super.key});
+  final String bmi;
+  final String result;
+  final String resultInterpretation;
+
+  const ResultsPage({
+    super.key,
+    required this.bmi,
+    required this.result,
+    required this.resultInterpretation,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -19,14 +28,14 @@ class ResultsPage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Expanded(
+          Flexible(
             child: Container(
-              padding: EdgeInsets.all(15),
+              padding: const EdgeInsets.all(15),
               alignment: Alignment.bottomLeft,
-              child: Text('Your Result', style: numberTextStyle),
+              child: const Text('Your Result', style: numberTextStyle),
             ),
           ),
-          Expanded(
+          Flexible(
             flex: 5,
             child: ReusableCard(
               colour: activeCardColor,
@@ -34,27 +43,36 @@ class ResultsPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Text(
-                    'OVERWEIGHT',
-                    style: resultTextStyle,
+                  Flexible(
+                    child: Text(
+                      result,
+                      style: resultTextStyle,
+                    ),
                   ),
-                  Text(
-                    '29.3',
-                    style: kBMITextStyle,
+                  Flexible(
+                    child: Text(
+                      bmi,
+                      style: kBMITextStyle,
+                    ),
                   ),
-                  Text(
-                    'Your BMI is Quite Low, You should eat more!',
-                    style: kBodyTextStyle,
-                    textAlign: TextAlign.center,
+                  Flexible(
+                    child: Text(
+                      resultInterpretation,
+                      style: kBodyTextStyle,
+                      textAlign: TextAlign.center,
+                    ),
                   ),
                 ],
               ),
             ),
           ),
-          Expanded(
+          Flexible(
             child: BottomButton(
               onTap: () {
-                Navigator.pushNamed(context, '/');
+                Navigator.pushNamed(
+                  context,
+                  '/',
+                );
               },
               gestureText: 'RE-CALCULATE',
             ),

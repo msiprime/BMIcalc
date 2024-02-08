@@ -1,11 +1,12 @@
-import 'package:bmi_calculator/reusable_card.dart';
-import 'package:bmi_calculator/round_icon_button.dart';
+import 'package:bmi_calculator/components/reusable_card.dart';
+import 'package:bmi_calculator/components/round_icon_button.dart';
+import 'package:bmi_calculator/screens/second_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
-import 'calculate_gesture_detector.dart';
-import 'constants.dart';
-import 'icon_content.dart';
+import '../calculator_brain.dart';
+import '../components/calculate_gesture_detector.dart';
+import '../components/icon_content.dart';
+import '../constants.dart';
 
 enum Gender { male, female }
 
@@ -33,10 +34,11 @@ class InputPageState extends State<InputPage> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Expanded(
+          Flexible(
             child: Row(
               children: [
-                Expanded(
+                Flexible(
+                  fit: FlexFit.tight,
                   child: ReusableCard(
                     press: () {
                       setState(() {
@@ -52,7 +54,8 @@ class InputPageState extends State<InputPage> {
                     ),
                   ),
                 ),
-                Expanded(
+                Flexible(
+                  fit: FlexFit.tight,
                   child: ReusableCard(
                     press: () {
                       setState(() {
@@ -71,7 +74,7 @@ class InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          Expanded(
+          Flexible(
             child: ReusableCard(
               colour: activeCardColor,
               cardChild: Column(
@@ -107,10 +110,10 @@ class InputPageState extends State<InputPage> {
               ),
             ),
           ),
-          Expanded(
+          Flexible(
             child: Row(
               children: [
-                Expanded(
+                Flexible(
                   child: ReusableCard(
                     colour: activeCardColor,
                     cardChild: Column(
@@ -149,7 +152,7 @@ class InputPageState extends State<InputPage> {
                     ),
                   ),
                 ),
-                Expanded(
+                Flexible(
                   child: ReusableCard(
                     colour: activeCardColor,
                     cardChild: Column(
@@ -193,7 +196,19 @@ class InputPageState extends State<InputPage> {
           ),
           BottomButton(
             onTap: () {
-              Navigator.pushNamed(context, '/second');
+              CalculatorBrain calc = CalculatorBrain(
+                  height: _currentHeight, weight: _currentWeight);
+
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ResultsPage(
+                    bmi: calc.calculateBMI(),
+                    result: calc.getResult(),
+                    resultInterpretation: calc.getInterpretation(),
+                  ),
+                ),
+              );
             },
             gestureText: 'CALCULATE',
           )
