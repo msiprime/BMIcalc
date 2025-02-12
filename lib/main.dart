@@ -1,6 +1,5 @@
 import 'package:bmi_calculator/common/BmiController.dart';
 import 'package:bmi_calculator/features/Calculator/screens/calculator_screen.dart';
-import 'package:bmi_calculator/screens/second_screen.dart';
 import 'package:bmi_calculator/utils/style.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
@@ -14,8 +13,6 @@ class BMICalculator extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/',
-      routes: {'/': (context) =>  const ResultsPage(bmi: 'ok', result: '', resultInterpretation: '',)},
       theme: ThemeData.dark().copyWith(
         sliderTheme: SliderTheme.of(context).copyWith(
           activeTrackColor: Colors.white,
