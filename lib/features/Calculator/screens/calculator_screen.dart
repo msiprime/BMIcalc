@@ -9,10 +9,13 @@ import '../widgets/calculate_gesture_detector.dart';
 import '../widgets/icon_content.dart';
 import '../widgets/round_icon_button.dart';
 class CalculatorScreen extends StatelessWidget {
-  Bmicontroller controller=Get.find<Bmicontroller>();
+
+   const CalculatorScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    Bmicontroller controller=Get.find<Bmicontroller>();
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('BMI CALCULATOR'),
