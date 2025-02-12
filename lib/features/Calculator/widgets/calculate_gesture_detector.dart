@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../constants.dart';
+import '../../../utils/style.dart';
 
 class BottomButton extends StatelessWidget {
   final dynamic onTap;
