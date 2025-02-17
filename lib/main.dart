@@ -11,6 +11,7 @@ import 'package:flutter/material.dart';
 
 
 void main(){
+  log('Feature Two');
   Get.put(Bmicontroller());
   runApp(BMICalculator());
 }
