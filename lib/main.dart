@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 
 
 void main(){
+  print("Feature 1");
   Get.put(Bmicontroller());
   runApp(BMICalculator());
 }
