@@ -1,0 +1,1 @@
+/home/sakibul/Desktop/Git Final/BMIcalc/build/app/intermediates/cxx/Debug/14526f6r/obj/armeabi-v7a
