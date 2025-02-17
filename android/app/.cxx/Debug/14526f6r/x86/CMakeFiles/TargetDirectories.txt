@@ -1,0 +1,2 @@
+/home/sakibul/Desktop/Git Final/BMIcalc/android/app/.cxx/Debug/14526f6r/x86/CMakeFiles/edit_cache.dir
+/home/sakibul/Desktop/Git Final/BMIcalc/android/app/.cxx/Debug/14526f6r/x86/CMakeFiles/rebuild_cache.dir
