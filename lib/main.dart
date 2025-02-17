@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:bmi_calculator/screens/second_screen.dart';
 import 'package:bmi_calculator/screens/splash_screen.dart';
 import 'package:bmi_calculator/common/BmiController.dart';
@@ -9,6 +11,7 @@ import 'package:flutter/material.dart';
 
 
 void main(){
+  log('Feature Two');
   Get.put(Bmicontroller());
   runApp(BMICalculator());
 }
