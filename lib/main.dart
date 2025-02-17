@@ -12,6 +12,7 @@ import 'package:flutter/material.dart';
 
 void main(){
   print("Feature 1");
+  print("Feature 1");
   log('Feature Two');
   log('Feature Three');
   Get.put(Bmicontroller());
