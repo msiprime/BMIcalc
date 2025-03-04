@@ -1,4 +1,3 @@
-import 'dart:developer';
 
 import 'package:bmi_calculator/screens/second_screen.dart';
 import 'package:bmi_calculator/screens/splash_screen.dart';
@@ -6,7 +5,6 @@ import 'package:bmi_calculator/common/BmiController.dart';
 import 'package:bmi_calculator/features/Calculator/screens/calculator_screen.dart';
 import 'package:bmi_calculator/themes/dark_theme.dart';
 import 'package:bmi_calculator/themes/light_theme.dart';
-import 'package:bmi_calculator/utils/style.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 
