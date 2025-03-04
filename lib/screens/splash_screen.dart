@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../utils/app_constants.dart';
+
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
@@ -27,14 +29,18 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center, spacing: 30.0, children: [
-          Center(child: FlutterLogo(size: 100.0)),
-          Transform.scale(
-            scale: 0.5,
-            child: const CircularProgressIndicator(color: Colors.white),
-          ),
-        ],
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          spacing: 30.0,
+          children: [
+            Image.asset(ImageAssets.logo, height: 150, width: 150),
+            Transform.scale(
+              scale: 0.5,
+              child: const CircularProgressIndicator(color: Colors.white),
+            ),
+          ],
+        ),
       ),
     );
   }
