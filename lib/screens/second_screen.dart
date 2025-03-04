@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+
 import '../common/widgets/reusable_card.dart';
 import '../features/Calculator/widgets/calculate_gesture_detector.dart';
-import '../utils/style.dart';
+
 class ResultsPage extends StatelessWidget {
   final String bmi;
   final String result;
@@ -28,15 +29,17 @@ class ResultsPage extends StatelessWidget {
         children: [
           Flexible(
             child: Container(
-              padding: const EdgeInsets.all(15),
-              alignment: Alignment.bottomLeft,
-              child: const Text('Your Result', style: numberTextStyle),
-            ),
+                padding: const EdgeInsets.all(15),
+                alignment: Alignment.bottomLeft,
+                child: Text(
+                  'Your Result',
+                  style: Theme.of(context).textTheme.headlineLarge,
+                )),
           ),
           Flexible(
             flex: 5,
             child: ReusableCard(
-              colour: activeCardColor,
+              colour: Theme.of(context).colorScheme.secondary,
               cardChild: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -44,19 +47,19 @@ class ResultsPage extends StatelessWidget {
                   Flexible(
                     child: Text(
                       result,
-                      style: resultTextStyle,
+                      style: Theme.of(context).textTheme.headlineSmall,
                     ),
                   ),
                   Flexible(
                     child: Text(
                       bmi,
-                      style: kBMITextStyle,
+                      style: Theme.of(context).textTheme.headlineLarge,
                     ),
                   ),
                   Flexible(
                     child: Text(
                       resultInterpretation,
-                      style: kBodyTextStyle,
+                      style: Theme.of(context).textTheme.bodyLarge,
                       textAlign: TextAlign.center,
                     ),
                   ),

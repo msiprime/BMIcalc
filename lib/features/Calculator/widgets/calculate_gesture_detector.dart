@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../utils/style.dart';
 
 class BottomButton extends StatelessWidget {
   final dynamic onTap;
@@ -19,12 +18,12 @@ class BottomButton extends StatelessWidget {
       child: Container(
         alignment: Alignment.center,
         margin: const EdgeInsets.only(top: 10),
-        height: bottomContainerHeight,
+        height: 80,
         width: double.infinity,
-        color: bottomContainerColor,
+        color: Theme.of(context).colorScheme.secondary,
         child: Text(
           gestureText,
-          style: kLargeTextStyle,
+          style: Theme.of(context).textTheme.labelLarge,
         ),
       ),
     );

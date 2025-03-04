@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../utils/style.dart';
 
 class IconContent extends StatelessWidget {
   final IconData fontAwesomeIcon;
@@ -20,7 +19,7 @@ class IconContent extends StatelessWidget {
         ),
         Text(
           labelText,
-          style: labelTextStyle,
+          style: Theme.of(context).textTheme.labelLarge,
         )
       ],
     );
