@@ -9,7 +9,6 @@ import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 
 
-
 void main(){
   log('feature one is added by msi');
   log('feature two is fixed and added by msi');
@@ -18,6 +17,7 @@ void main(){
   Get.put(Bmicontroller());
   runApp(BMICalculator());
 }
+
 class BMICalculator extends StatelessWidget {
   const BMICalculator({super.key});
   @override
