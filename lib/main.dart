@@ -16,6 +16,7 @@ void main(){
   log('feature 3 bug is fixed by msi');
   print('feature 1 and 2 is added');
   print('feature 1 and 2 is added');
+  print("feature 6");
   Get.put(Bmicontroller());
   runApp(BMICalculator());
 }
