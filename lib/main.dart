@@ -17,6 +17,7 @@ void main(){
   print('feature 1 and 2 is added');
   print('feature 1 and 2 is added');
   print("feature 6");
+  log('feature 7 is added by msi');
   Get.put(Bmicontroller());
   runApp(BMICalculator());
 }
