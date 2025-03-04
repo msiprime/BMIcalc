@@ -10,6 +10,10 @@ import 'package:flutter/material.dart';
 
 
 void main(){
+
+
+  log('feature 3 and 4 is added by msi');
+  log('feature 3 bug is fixed by msi');
   print('feature 1 and 2 is added');
   print('feature 1 and 2 is added');
   Get.put(Bmicontroller());
