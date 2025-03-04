@@ -1,4 +1,3 @@
-import 'dart:developer';
 
 import 'package:bmi_calculator/screens/second_screen.dart';
 import 'package:bmi_calculator/screens/splash_screen.dart';
