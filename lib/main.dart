@@ -8,12 +8,13 @@ import 'package:bmi_calculator/utils/style.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 
-
-
-void main(){
+void main() {
+  print('feature three added');
+  print('feature four added');
   Get.put(Bmicontroller());
   runApp(BMICalculator());
 }
+
 class BMICalculator extends StatelessWidget {
   const BMICalculator({super.key});
   @override
@@ -23,7 +24,13 @@ class BMICalculator extends StatelessWidget {
       getPages: [
         GetPage(name: '/', page: () => const SplashScreen()),
         GetPage(name: '/home-page', page: () => const CalculatorScreen()),
-        GetPage(name: '/result-page', page: () => const ResultsPage(bmi: '', result: '', resultInterpretation: '',)),
+        GetPage(
+            name: '/result-page',
+            page: () => const ResultsPage(
+                  bmi: '',
+                  result: '',
+                  resultInterpretation: '',
+                )),
       ],
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
