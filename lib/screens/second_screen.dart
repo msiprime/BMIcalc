@@ -30,7 +30,7 @@ class ResultsPage extends StatelessWidget {
             child: Container(
               padding: const EdgeInsets.all(15),
               alignment: Alignment.bottomLeft,
-              child: const Text('Your Result', style: numberTextStyle),
+              child:  Text('Your Result', style: numberTextStyle),
             ),
           ),
           Flexible(

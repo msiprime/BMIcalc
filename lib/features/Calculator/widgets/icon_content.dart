@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../utils/style.dart';
 
@@ -14,13 +15,13 @@ class IconContent extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Icon(fontAwesomeIcon, size: 80,color: Theme.of(context).cardColor,),
+        Icon(fontAwesomeIcon, size: 80,color: !Get.isDarkMode?Colors.white:Colors.black,),
         const SizedBox(
           height: 18,
         ),
         Text(
           labelText,
-          style: labelTextStyle,
+          style: TextStyle(color: Get.isDarkMode?Colors.white:Colors.black, fontSize: 18),
         )
       ],
     );

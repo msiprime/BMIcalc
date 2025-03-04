@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../utils/style.dart';
 
 ThemeData light(BuildContext context) => ThemeData(
-  cardColor: Colors.white, // Change to a light color
+  cardColor: Colors.grey[100], // Change to a light color
   sliderTheme: SliderTheme.of(context).copyWith(
     activeTrackColor: Colors.black, // Change to a darker color for light theme
     overlayColor: const Color(0x29FF4081), // Change to a lighter overlay color

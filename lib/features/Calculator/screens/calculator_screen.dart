@@ -34,7 +34,7 @@ class CalculatorScreen extends StatelessWidget {
                     press: () => controller.updateGender(Gender.male),
                     colour: controller.selectedGender.value == Gender.male
                         ? activeCardColor
-                        : inActiveCardColor,
+                        : Theme.of(context).cardColor,
                     cardChild: const IconContent(
                       fontAwesomeIcon: FontAwesomeIcons.mars,
                       labelText: 'MALE',
@@ -59,7 +59,7 @@ class CalculatorScreen extends StatelessWidget {
           ),
           Flexible(
             child: Obx(() => ReusableCard(
-              colour: activeCardColor,
+              colour: Get.isDarkMode?Theme.of(context).primaryColor:Theme.of(context).cardColor,
               cardChild: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -91,7 +91,7 @@ class CalculatorScreen extends StatelessWidget {
               children: [
                 Flexible(
                   child: Obx(() => ReusableCard(
-                    colour: activeCardColor,
+                    colour: Get.isDarkMode?Theme.of(context).primaryColor:Theme.of(context).cardColor,
                     cardChild: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -117,7 +117,7 @@ class CalculatorScreen extends StatelessWidget {
                 ),
                 Flexible(
                   child: Obx(() => ReusableCard(
-                    colour: activeCardColor,
+                    colour: Get.isDarkMode?Theme.of(context).primaryColor:Theme.of(context).cardColor,
                     cardChild: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [

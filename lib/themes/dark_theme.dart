@@ -12,4 +12,9 @@ ThemeData dark(BuildContext context) => ThemeData(
   ),
   scaffoldBackgroundColor: const Color(0xFF151323),
   primaryColor: Colors.black,
+  textTheme: TextTheme(
+    bodyLarge: TextStyle(
+      color: secondaryColor,
+    )
+  )
 );

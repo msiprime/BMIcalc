@@ -30,7 +30,7 @@ class BMICalculator extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: light(context),
       darkTheme: dark(context),
-      themeMode: ThemeMode.system,
+      themeMode: ThemeMode.light,
     );
   }
 }
