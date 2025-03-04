@@ -1,3 +1,4 @@
+import 'dart:developer';
 
 import 'package:bmi_calculator/screens/second_screen.dart';
 import 'package:bmi_calculator/screens/splash_screen.dart';
@@ -10,9 +11,8 @@ import 'package:flutter/material.dart';
 
 
 void main(){
-
-
   log('feature 3 and 4 is added by msi');
+  log('feature 5 is added by msi');
   log('feature 3 bug is fixed by msi');
   print('feature 1 and 2 is added');
   print('feature 1 and 2 is added');
