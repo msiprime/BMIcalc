@@ -11,8 +11,6 @@ import 'package:flutter/material.dart';
 
 
 void main(){
-  log('feature one is added by msi');
-  log('feature two is fixed and added by msi');
   Get.put(Bmicontroller());
   runApp(BMICalculator());
 }
