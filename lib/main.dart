@@ -8,13 +8,16 @@ import 'package:bmi_calculator/utils/style.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+
+
+void main(){
+  log('feature one is added by msi');
+  log('feature two is fixed and added by msi');
   print('feature three added');
   print('feature four added');
   Get.put(Bmicontroller());
   runApp(BMICalculator());
 }
-
 class BMICalculator extends StatelessWidget {
   const BMICalculator({super.key});
   @override
