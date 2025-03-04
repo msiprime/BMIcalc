@@ -10,6 +10,8 @@ import 'package:flutter/material.dart';
 
 
 void main(){
+  print('feature 1 and 2 is added');
+  print('feature 1 and 2 is added');
   Get.put(Bmicontroller());
   runApp(BMICalculator());
 }
