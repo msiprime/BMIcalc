@@ -14,7 +14,7 @@ class IconContent extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Icon(fontAwesomeIcon, size: 80),
+        Icon(fontAwesomeIcon, size: 80,color: Theme.of(context).cardColor,),
         const SizedBox(
           height: 18,
         ),

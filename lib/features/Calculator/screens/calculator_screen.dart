@@ -20,7 +20,7 @@ class CalculatorScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('BMI CALCULATOR'),
         centerTitle: true,
-        backgroundColor: const Color(0xFF0F1126),
+        backgroundColor: Theme.of(context).cardColor,
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,

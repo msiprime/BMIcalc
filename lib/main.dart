@@ -4,6 +4,8 @@ import 'package:bmi_calculator/screens/second_screen.dart';
 import 'package:bmi_calculator/screens/splash_screen.dart';
 import 'package:bmi_calculator/common/BmiController.dart';
 import 'package:bmi_calculator/features/Calculator/screens/calculator_screen.dart';
+import 'package:bmi_calculator/themes/dark_theme.dart';
+import 'package:bmi_calculator/themes/light_theme.dart';
 import 'package:bmi_calculator/utils/style.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
@@ -26,18 +28,9 @@ class BMICalculator extends StatelessWidget {
         GetPage(name: '/result-page', page: () => const ResultsPage(bmi: '', result: '', resultInterpretation: '',)),
       ],
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark().copyWith(
-        sliderTheme: SliderTheme.of(context).copyWith(
-          activeTrackColor: Colors.white,
-          overlayColor: const Color(0x29eb1555),
-          thumbColor: bottomContainerColor,
-          inactiveTrackColor: secondaryColor,
-          thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 13.0),
-          overlayShape: const RoundSliderOverlayShape(overlayRadius: 26.0),
-        ),
-        scaffoldBackgroundColor: const Color(0xFF151323),
-        primaryColor: Colors.black,
-      ),
+      theme: light(context),
+      darkTheme: dark(context),
+      themeMode: ThemeMode.system,
     );
   }
 }
